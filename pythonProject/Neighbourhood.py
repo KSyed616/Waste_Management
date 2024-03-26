@@ -1,6 +1,7 @@
 from House import House
 import random
 
+
 # no roads under the idea that ONE garbage truck goes through a whole neighbourhood
 # with road implementation may need to pass a couple or array of strings as param
 # split total amongst strings
@@ -18,5 +19,5 @@ class Neighbourhood:
     def residents(self):
         res = 0
         for house in self.houses:
-            res+= house.residents
+            res += house.residents
         return res

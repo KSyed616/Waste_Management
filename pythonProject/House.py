@@ -1,6 +1,6 @@
 class House:
 
-    def __init__(self, neighbourhood, occupied,residents):  # occupied is boolean
+    def __init__(self, neighbourhood, occupied, residents):  # occupied is boolean
         self.neighbourhood = neighbourhood
         self.occupied = occupied
         self.residents = residents

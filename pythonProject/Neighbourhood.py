@@ -21,3 +21,15 @@ class Neighbourhood:
         for house in self.houses:
             res += house.residents
         return res
+
+    def collect(self):
+        for house in self.houses:
+            house.blue = True
+            house.green = True
+            house.black = True
+
+    def complete(self):
+        for house in self.houses:
+            if not house.isCollected():
+                return false
+        return true

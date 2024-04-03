@@ -3,6 +3,23 @@ from Neighbourhood import Neighbourhood
 from WasteDept import WasteDept
 
 
+def weekly_Schedule(waste_units):
+    random_int = random.randint(1, 3)
+
+    if random_int == 1:
+        day = "Monday"
+        waste_units["recycle"].collect_waste()
+    elif random_int == 2:
+        day = "Tuesday"
+        waste_units["organics"].collect_waste()
+    else:
+        day = "Wednesday"
+        waste_units["garbage"].collect_waste()
+
+    print(f"Today is {day}")
+    return day
+
+
 def waste_collections(neighbourhoods, waste_units):
     for neighbourhood in neighbourhoods:
         for house in neighbourhood.houses:
@@ -14,6 +31,7 @@ def waste_collections(neighbourhoods, waste_units):
 
 
 def main():
+    global unit
     n1 = Neighbourhood(50)
     n2 = Neighbourhood(75)
     n3 = Neighbourhood(50)
@@ -32,9 +50,14 @@ def main():
 
     waste_collections(neighbourhoods, waste_units)
 
-    # Print current load in each waste unit
-    for unit_type, unit in waste_units.items():
-        print(f"{unit_type.capitalize()} unit current load: {unit.current}/{unit.capacity}")
+    day = weekly_Schedule(waste_units)
+    # Print a message based on the day
+    if day == "Monday":
+        print("Garbage collection unit for Monday:", waste_units["recycle"].current, "/200")
+    elif day == "Tuesday":
+        print("Garbage collection unit for Tuesday:", waste_units["organics"].current, "/200")
+    else:
+        print("Garbage collection unit for Wednesday:", waste_units["garbage"].current, "/200")
 
 
 if __name__ == "__main__":

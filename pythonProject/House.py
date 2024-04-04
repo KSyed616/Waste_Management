@@ -4,7 +4,7 @@ class House:
         self.occupied = occupied
         self.residents = residents
         # True = collected, else = not collected
-        if(occupied):  # occupied is boolean
+        if occupied:  # occupied is boolean
             # blue = recycle, green = organics, black = garbage
             self.blue = False
             self.green = False

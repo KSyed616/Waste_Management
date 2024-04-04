@@ -1,5 +1,6 @@
 import random
 
+
 class WasteDept:
     def __init__(self, type):
         self.type = type
